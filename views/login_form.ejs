@@ -1,0 +1,36 @@
+<form action="/api/login" method='POST' class='form' id='login'>
+
+
+    <div class=" form-div ">
+
+        <div class='icon'><i class="fas fa-user-circle"></i></div>
+        <div class="g-signin2" data-onsuccess="onSignIn" style='margin:0px 38%;'></div>
+        <div class="mb-3 ">
+            <label for="email" class="form-label ">Email address</label>
+            <input type="email" name='email' class="form-control " id="email" required>
+            <div id="emailHelp " class="form-text ">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3 ">
+            <label for="password" class="form-label ">Password</label>
+            <input type="password" name='password' class="form-control " id="password" required>
+        </div>
+
+        <button type="submit " class="btn btn-primary submit">Submit</button>
+    </div>
+</form>
+<script>
+    function onSignIn(googleUser) {
+        var profile = googleUser.getBasicProfile();
+        document.getElementById('email').value = profile.getEmail();
+    }
+</script>
+<!-- <script>
+    
+
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script> -->
